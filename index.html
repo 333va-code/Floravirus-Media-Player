@@ -1,0 +1,54 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floravirus Media Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="fmp-fullscreen-shell">
+    <div class="title-bar">
+      <span class="brand-text">Floravirus Media Player</span>
+      <span class="branding-tag">[ASCII_200CH_16BIT]</span>
+    </div>
+
+    <div class="main-layout">
+      <div class="status-bar">
+        <span id="track-status">NO MEDIA LOADED</span>
+        <span id="time-display">00:00 / 00:00</span>
+      </div>
+
+      <div class="viewport-container" id="viewport">
+        <canvas id="ascii-canvas"></canvas>
+      </div>
+
+      <div class="control-deck">
+        <div class="seeker-wrapper">
+          <input type="range" id="seek-bar" class="fmp-slider" value="0" min="0" max="100" step="0.1">
+        </div>
+
+        <div class="button-row">
+          <div class="playback-controls">
+            <button id="btn-play" class="fmp-btn">PLAY</button>
+            <button id="btn-pause" class="fmp-btn">PAUSE</button>
+            <button id="btn-stop" class="fmp-btn">STOP</button>
+          </div>
+
+          <div class="file-wrapper">
+            <button class="fmp-btn">LOAD FILE</button>
+            <input type="file" id="file-upload" accept="video/*">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <video id="video-source" class="hidden-element" playsinline></video>
+  <canvas id="proc-canvas" class="hidden-element"></canvas>
+
+  <script src="app.js"></script>
+</body>
+</html>
